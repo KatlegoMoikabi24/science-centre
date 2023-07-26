@@ -2,94 +2,91 @@
 <html lang="en">
 
 <head>
-  <!-- Required meta tags -->
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Centre</title>
-  <!-- plugins:css -->
+
   <link rel="stylesheet" href="../../vendors/feather/feather.css">
   <link rel="stylesheet" href="../../vendors/ti-icons/css/themify-icons.css">
   <link rel="stylesheet" href="../../vendors/css/vendor.bundle.base.css">
-  <!-- endinject -->
-  <!-- Plugin css for this page -->
-  <!-- End plugin css for this page -->
-  <!-- inject:css -->
+
+
   <link rel="stylesheet" href="../../css/vertical-layout-light/style.css">
-  <!-- endinject -->
+
   <link rel="shortcut icon" href="../../images/favicon.png" />
-  <style >
-#upload {
-    opacity: 0;
-}
+  <style>
+    #upload {
+      opacity: 0;
+    }
 
-#upload-label {
-    position: absolute;
-    top: 50%;
-    left: 1rem;
-    transform: translateY(-50%);
-}
+    #upload-label {
+      position: absolute;
+      top: 50%;
+      left: 1rem;
+      transform: translateY(-50%);
+    }
 
-.image-area {
-    border: 2px dashed rgba(62, 207, 5, 0.7);
-    padding: 1rem;
-    position: relative;
-}
+    .image-area {
+      border: 2px dashed rgba(62, 207, 5, 0.7);
+      padding: 1rem;
+      position: relative;
+    }
 
-.image-area::before {
-    content: 'Uploaded image result';
-    color: rgba(62, 207, 5, 0.7);
-    font-weight: bold;
-    text-transform: uppercase;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 0.8rem;
-    z-index: 1;
-}
+    .image-area::before {
+      content: 'Uploaded image result';
+      color: rgba(62, 207, 5, 0.7);
+      font-weight: bold;
+      text-transform: uppercase;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 0.8rem;
+      z-index: 1;
+    }
 
-.image-area img {
-    z-index: 2;
-    position: relative;
-}
+    .image-area img {
+      z-index: 2;
+      position: relative;
+    }
 
-body {
-    min-height: 100vh;
-    background-color: #757f9a;
-    background-image: linear-gradient(147deg, #757f9a 0%, rgba(62, 207, 5, 0.7) 100%);
-}
-
+    body {
+      min-height: 100vh;
+      background-color: #757f9a;
+      background-image: linear-gradient(147deg, #757f9a 0%, rgba(62, 207, 5, 0.7) 100%);
+    }
   </style>
 
-  <script >
+  <script>
 
-function readURL(input) {
-    if (input.files && input.files[0]) {
+    function readURL(input) {
+      if (input.files && input.files[0]) {
         var reader = new FileReader();
 
         reader.onload = function (e) {
-            $('#imageResult')
-                .attr('src', e.target.result);
+          $('#imageResult')
+            .attr('src', e.target.result);
         };
         reader.readAsDataURL(input.files[0]);
+      }
     }
-}
 
-$(function () {
-    $('#upload').on('change', function () {
+    $(function () {
+      $('#upload').on('change', function () {
         readURL(input);
+      });
     });
-});
 
-var input = document.getElementById( 'upload' );
-var infoArea = document.getElementById( 'upload-label' );
+    var input = document.getElementById('upload');
+    var infoArea = document.getElementById('upload-label');
 
-input.addEventListener( 'change', showFileName );
-function showFileName( event ) {
-  var input = event.srcElement;
-  var fileName = input.files[0].name;
-  infoArea.textContent = 'File name: ' + fileName;
-}
+    input.addEventListener('change', showFileName);
+    function showFileName(event) {
+      var input = event.srcElement;
+      var fileName = input.files[0].name;
+      infoArea.textContent = 'File name: ' + fileName;
+    }
   </script>
 </head>
 
@@ -98,8 +95,10 @@ function showFileName( event ) {
     <!-- partial:../../partials/_navbar.html -->
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-        <a class="navbar-brand brand-logo mr-5" href="../../index.html"><img src="../../images/logo.png" style="width: 150px;height: 55px;" class="mr-2" alt="logo"/></a>
-        <a class="navbar-brand brand-logo-mini" href="../../index.html"><img src="../../images/logo.png" alt="logo"/></a>
+        <a class="navbar-brand brand-logo mr-5" href="../../index.html"><img src="../../images/logo.png"
+            style="width: 150px;height: 55px;" class="mr-2" alt="logo" /></a>
+        <a class="navbar-brand brand-logo-mini" href="../../index.html"><img src="../../images/logo.png"
+            alt="logo" /></a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
         <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -113,17 +112,20 @@ function showFileName( event ) {
                   <i class="icon-search"></i>
                 </span>
               </div>
-              <input type="text" class="form-control" id="navbar-search-input" placeholder="Search now" aria-label="search" aria-describedby="search">
+              <input type="text" class="form-control" id="navbar-search-input" placeholder="Search now"
+                aria-label="search" aria-describedby="search">
             </div>
           </li>
         </ul>
         <ul class="navbar-nav navbar-nav-right">
           <li class="nav-item dropdown">
-            <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
+            <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#"
+              data-toggle="dropdown">
               <i class="icon-bell mx-0"></i>
               <span class="count"></span>
             </a>
-            <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
+            <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list"
+              aria-labelledby="notificationDropdown">
               <p class="mb-0 font-weight-normal float-left dropdown-header">Notifications</p>
               <a class="dropdown-item preview-item">
                 <div class="preview-thumbnail">
@@ -168,7 +170,7 @@ function showFileName( event ) {
           </li>
           <li class="nav-item nav-profile dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
-              <img src="../../images/faces/face28.jpg" alt="profile"/>
+              <img src="../../images/faces/face28.jpg" alt="profile" />
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
               <a class="dropdown-item">
@@ -187,7 +189,8 @@ function showFileName( event ) {
             </a>
           </li>
         </ul>
-        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button"
+          data-toggle="offcanvas">
           <span class="icon-menu"></span>
         </button>
       </div>
@@ -200,8 +203,12 @@ function showFileName( event ) {
         <div id="theme-settings" class="settings-panel">
           <i class="settings-close ti-close"></i>
           <p class="settings-heading">SIDEBAR SKINS</p>
-          <div class="sidebar-bg-options selected" id="sidebar-light-theme"><div class="img-ss rounded-circle bg-light border mr-3"></div>Light</div>
-          <div class="sidebar-bg-options" id="sidebar-dark-theme"><div class="img-ss rounded-circle bg-dark border mr-3"></div>Dark</div>
+          <div class="sidebar-bg-options selected" id="sidebar-light-theme">
+            <div class="img-ss rounded-circle bg-light border mr-3"></div>Light
+          </div>
+          <div class="sidebar-bg-options" id="sidebar-dark-theme">
+            <div class="img-ss rounded-circle bg-dark border mr-3"></div>Dark
+          </div>
           <p class="settings-heading mt-2">HEADER SKINS</p>
           <div class="color-tiles mx-0 px-4">
             <div class="tiles success"></div>
@@ -217,14 +224,17 @@ function showFileName( event ) {
         <i class="settings-close ti-close"></i>
         <ul class="nav nav-tabs border-top" id="setting-panel" role="tablist">
           <li class="nav-item">
-            <a class="nav-link active" id="todo-tab" data-toggle="tab" href="#todo-section" role="tab" aria-controls="todo-section" aria-expanded="true">TO DO LIST</a>
+            <a class="nav-link active" id="todo-tab" data-toggle="tab" href="#todo-section" role="tab"
+              aria-controls="todo-section" aria-expanded="true">TO DO LIST</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" id="chats-tab" data-toggle="tab" href="#chats-section" role="tab" aria-controls="chats-section">CHATS</a>
+            <a class="nav-link" id="chats-tab" data-toggle="tab" href="#chats-section" role="tab"
+              aria-controls="chats-section">CHATS</a>
           </li>
         </ul>
         <div class="tab-content" id="setting-content">
-          <div class="tab-pane fade show active scroll-wrapper" id="todo-section" role="tabpanel" aria-labelledby="todo-section">
+          <div class="tab-pane fade show active scroll-wrapper" id="todo-section" role="tabpanel"
+            aria-labelledby="todo-section">
             <div class="add-items d-flex px-3 mb-0">
               <form class="form w-100">
                 <div class="form-group d-flex">
@@ -304,7 +314,8 @@ function showFileName( event ) {
           <div class="tab-pane fade" id="chats-section" role="tabpanel" aria-labelledby="chats-section">
             <div class="d-flex align-items-center justify-content-between border-bottom">
               <p class="settings-heading border-top-0 mb-3 pl-3 pt-0 border-bottom-0 pb-0">Friends</p>
-              <small class="settings-heading border-top-0 mb-3 pt-0 border-bottom-0 pb-0 pr-3 font-weight-normal">See All</small>
+              <small class="settings-heading border-top-0 mb-3 pt-0 border-bottom-0 pb-0 pr-3 font-weight-normal">See
+                All</small>
             </div>
             <ul class="chat-list">
               <li class="list active">
@@ -381,25 +392,27 @@ function showFileName( event ) {
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link"  href="../../pages/ui-features/buttons.html">Classmates</a></li>
-                <li class="nav-item"> <a class="nav-link"  href="../../pages/ui-features/buttons.html">Teachers</a></li>
+                <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/buttons.html">Classmates</a>
+                </li>
+                <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/buttons.html">Teachers</a></li>
                 <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Subjects</a></li>
                 <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Progress</a></li>
               </ul>
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
+            <a class="nav-link" data-toggle="collapse" href="#form-elements" aria-expanded="false"
+              aria-controls="form-elements">
               <i class="icon-columns menu-icon"></i>
               <span class="menu-title">Study Materials</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="form-elements">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="pages/tables/papers.html">Past Papers</a></li>
+                <li class="nav-item"><a class="nav-link" href="../../pages/tables/papers.html">Past Papers</a></li>
                 <li class="nav-item"><a class="nav-link" href="pages/forms/basic_elements.html">Memorandums</a></li>
                 <li class="nav-item"><a class="nav-link" href="pages/tables/papers.html">Live Class</a></li>
-                <li class="nav-item"><a class="nav-link" href="recordings.html">Recordings</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Recordings</a></li>
                 <li class="nav-item"><a class="nav-link" href="pages/forms/basic_elements.html">Tutorials</a></li>
               </ul>
             </div>
@@ -490,383 +503,159 @@ function showFileName( event ) {
         </ul>
       </nav>
       <!-- partial -->
+
       <div class="main-panel">
+
+        <h4 style="padding: 15px; font-size: 28px;color: beige;">Live Recordings</h4>
+
         <div class="content-wrapper">
           <div class="row">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-6 ">
+                  <div class="card">
+                    <div class="card-image">
+                      <div class="embed-responsive embed-responsive-16by9">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/v_XaH71ql3c" frameborder="0"
+                          allowfullscreen></iframe>
+                      </div>
 
-            <div class="container py-5">
+                    </div><!-- card image -->
 
-              <!-- For demo purpose -->
-              <header class=" text-center">
-                  <h1 class="display-4">Upload Past Paper</h1>
-                  <p class="lead mb-0">Upload Any Past Question Paper(Pdf, Doc,Docx, TTF)</p>
-                  <p class="mb-5 font-weight-light">Main Centre by
-                      <a href="#">
-                          <u>Albertina SC</u>
-                      </a>
-                  </p>          
-          
-              <div class="row py-4">
-                  <div class="col-lg-6 mx-auto">
-          
-                      <!-- Upload image input-->
-                      <div class="input-group mb-3 px-2 py-2 rounded-pill bg-white shadow-sm">
-                          <input id="upload" type="file" onchange="readURL(this);" class="form-control border-0">
-                          <label id="upload-label" for="upload" class="font-weight-normal text-muted">Choose file</label>
-                          <div class="input-group-append">
-                              <label for="upload" class="btn btn-success m-0 rounded-pill px-4"> <i class="fa fa-cloud-upload mr-2"></i><small class="text-uppercase font-weight-bold text-muted" style="color: aliceblue;">Choose file</small></label>
-                          </div>
-                      </div>          
-                      <!-- Uploaded image area-->
-                      <div class="image-area mt-4"><img id="imageResult" src="#" alt="" class="img-fluid rounded shadow-sm mx-auto d-block"></div>
-          
+                    <div class="card-content">
+                      <span class="card-title">Celebrating 100 Years of Albertina Sisulu</span>
+
+                    </div><!-- card content -->
+                    <br>
+                    <br>
+                    <br>
                   </div>
-              </div>
-          </div>
-     
-            <div class="col-lg-12 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title">Uploaded Past Papers</h4>
-                  <p class="card-description">
-                    Previous <code>Papers</code>
-                  </p>
-                  <div class="table-responsive">
-                    <table class="table table-striped">
-                      <thead>
-                        <tr>
-                          <th>
-                            File Type
-                          </th>
-                          <th>
-                            Document Name &amp; Size 
-                          </th>
-                          <th>
-                            Downloads
-                          </th>
-                          <th>
-                            Grade
-                          </th>
-                          <th>
-                            Year
-                          </th>
-                          <th>
-                            Action
-                          </th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td class="py-1">
-                            <b>Pdf</b>
-                          </td>
-                          <td>
-                            Mathematics_P1-2021 - <span style="color: black; font-weight: bolder; ">3MB</span>
-                          </td>
-                          <td>
-                            <div class="progress">
-                              <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                          </td>
-                          <td>
-                            Grd 11
-                          </td>
-                          <td>
-                            May 15, 2022
-                          </td>
-                          <td>
-                            <a href="http://" target="_blank" rel="noopener noreferrer">Download</a>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="py-1">
-                            <b>Doc</b>
-                          </td>
-                          <td>
-                            English_P1-2021 - <span style="color: black; font-weight: bolder; ">3MB</span>
-                          </td>
-                          <td>
-                            <div class="progress">
-                              <div class="progress-bar bg-danger" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                          </td>
-                          <td>
-                            Grd 10
-                          </td>
-                          <td>
-                            July 1, 2022
-                          </td>
-                          <td>
-                            <a href="http://" target="_blank" rel="noopener noreferrer">Download</a>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="py-1">
-                            <b>Pdf</b>
-                          </td>
-                          <td>
-                             Mathematics_P3-2018 - <span style="color: black; font-weight: bolder; ">8MB</span>
-                          </td>
-                          <td>
-                            <div class="progress">
-                              <div class="progress-bar bg-warning" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                          </td>
-                          <td>
-                            Grd 10
-                          </td>
-                          <td>
-                            Apr 12, 2022
-                          </td>
-                          <td>
-                            <a href="http://" target="_blank" rel="noopener noreferrer">Download</a>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="py-1">
-                            <b>Pdf</b>
-                          </td>
-                          <td>
-                             Mathematics_P1-2021 - <span style="color: black; font-weight: bolder; ">3MB</span>
-                          </td>
-                          <td>
-                            <div class="progress">
-                              <div class="progress-bar bg-primary" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                          </td>
-                          <td>
-                            Grd 9
-                          </td>
-                          <td>
-                            May 15, 2022
-                          </td>
-                          <td>
-                            <a href="http://" target="_blank" rel="noopener noreferrer">Download</a>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="py-1">
-                            <b>Docx</b>
-                          </td>
-                          <td>
-                            CAT-2022 - <span style="color: black; font-weight: bolder; ">2MB</span>
-                          </td>
-                          <td>
-                            <div class="progress">
-                              <div class="progress-bar bg-danger" role="progressbar" style="width: 35%" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                          </td>
-                          <td>
-                            Grd 12
-                          </td>
-                          <td>
-                            May 03, 2022
-                          </td>
-                          <td>
-                            <a href="http://" target="_blank" rel="noopener noreferrer">Download</a>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="py-1">
-                              <b>Pdf</b>
-                          </td>
-                          <td>
-                            English_P2-2021 - <span style="color: black; font-weight: bolder; ">2MB</span>
-                          </td>
-                          <td>
-                            <div class="progress">
-                              <div class="progress-bar bg-info" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                          </td>
-                          <td>
-                            Grd 12
-                          </td>
-                          <td>
-                            April 05, 2022
-                          </td>
-                          <td>
-                            <a href="http://" target="_blank" rel="noopener noreferrer">Download</a>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="py-1">
-                            <b>Pdf</b>
-                          </td>
-                          <td>
-                            CAT_P1-2021 - <span style="color: black; font-weight: bolder; ">3MB</span>
-                          </td>
-                          <td>
-                            <div class="progress">
-                              <div class="progress-bar bg-warning" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                          </td>
-                          <td>
-                            Grd 9
-                          </td>
-                          <td>
-                            June 16, 2022
-                          </td>
-                          <td>
-                            <a href="http://" target="_blank" rel="noopener noreferrer">Download</a>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
+                </div>
+                <div class="col-md-6 ">
+                  <div class="card">
+                    <div class="card-image">
+                      <div class="embed-responsive embed-responsive-16by9">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/_rOFHMX0XME" frameborder="0"
+                          allowfullscreen></iframe>
+                      </div>
+
+                    </div><!-- card image -->
+                    <div class="card-content">
+                      <span class="card-title">Launch of Albertina Sisulu Science Centre</span>
+                    </div><!-- card content -->
+                    <br>
+                    <br>
+                    <br>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="col-lg-12 stretch-card">
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title">Table with contextual classes</h4>
-                  <p class="card-description">
-                    Add class <code>.table-{color}</code>
-                  </p>
-                  <div class="table-responsive pt-3">
-                    <table class="table table-bordered">
-                      <thead>
-                        <tr>
-                          <th>
-                            #
-                          </th>
-                          <th>
-                            First name
-                          </th>
-                          <th>
-                            Product
-                          </th>
-                          <th>
-                            Amount
-                          </th>
-                          <th>
-                            Deadline
-                          </th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr class="table-info">
-                          <td>
-                            1
-                          </td>
-                          <td>
-                            Herman Beck
-                          </td>
-                          <td>
-                            Photoshop
-                          </td>
-                          <td>
-                            $ 77.99
-                          </td>
-                          <td>
-                            May 15, 2022
-                          </td>
-                        </tr>
-                        <tr class="table-warning">
-                          <td>
-                            2
-                          </td>
-                          <td>
-                             Mathematics_P1-2021 - <span style="color: black; font-weight: bolder; ">3MB</span>
-                          </td>
-                          <td>
-                            Flash
-                          </td>
-                          <td>
-                            $245.30
-                          </td>
-                          <td>
-                            July 1, 2022
-                          </td>
-                        </tr>
-                        <tr class="table-danger">
-                          <td>
-                            3
-                          </td>
-                          <td>
-                            English_P1-2021 - <span style="color: black; font-weight: bolder; ">3MB</span>
-                          </td>
-                          <td>
-                            Premeire
-                          </td>
-                          <td>
-                            $138.00
-                          </td>
-                          <td>
-                            Apr 12, 2022
-                          </td>
-                        </tr>
-                        <tr class="table-success">
-                          <td>
-                            4
-                          </td>
-                          <td>
-                             Mathematics_P1-2021 - <span style="color: black; font-weight: bolder; ">3MB</span>
-                          </td>
-                          <td>
-                            After effects
-                          </td>
-                          <td>
-                            $ 77.99
-                          </td>
-                          <td>
-                            May 15, 2022
-                          </td>
-                        </tr>
-                        <tr class="table-primary">
-                          <td>
-                            5
-                          </td>
-                          <td>
-                            English_P1-2021 - <span style="color: black; font-weight: bolder; ">3MB</span>
-                          </td>
-                          <td>
-                            Illustrator
-                          </td>
-                          <td>
-                            $ 160.25
-                          </td>
-                          <td>
-                            May 03, 2022
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
+
+
+              <div class="row">
+                <div class="col-md-6 ">
+                  <div class="card">
+                    <div class="card-image">
+                      <div class="embed-responsive embed-responsive-16by9">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/ZcV_io00p8Y" frameborder="0"
+                          allowfullscreen></iframe>
+                      </div>
+
+                    </div><!-- card image -->
+                    <div class="card-content">
+                      <span class="card-title">STEM Handover Live </span>
+                    </div><!-- card content -->
+                    <br>
+                    <br>
+                    <br>
+                  </div>
+                </div>
+
+                <div class="col-md-6 ">
+                  <div class="card">
+                    <div class="card-image">
+                      <div class="embed-responsive embed-responsive-16by9">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/bSp2nd6u1Jw" frameborder="0"
+                          allowfullscreen></iframe>
+                      </div>
+
+                    </div><!-- card image -->
+
+                    <div class="card-content">
+                      <span class="card-title">Science Innovation Session - 2021</span>
+                    </div>
+
+                    <!-- card content -->
+
+                    <br>
+                    <br>
+                    <br>
                   </div>
                 </div>
               </div>
+
+              <div class="row">
+                <div class="col-md-6 ">
+                  <div class="card">
+
+                    <div class="card-image">
+                      <div class="embed-responsive embed-responsive-16by9">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/DUUR2KAP47A" frameborder="0"
+                          allowfullscreen></iframe>
+                      </div>
+                    </div>
+
+                    <!-- card image -->
+                    <div class="card-content">
+                      <span class="card-title">Transfer Price</span>
+                      <button type="button" id="show" class="btn btn-custom pull-right" aria-label="Left Align">
+                        <i class="fa fa-ellipsis-v"></i>
+                      </button>
+                    </div>
+
+                    <!-- card content -->
+                    <!-- <div class="card-reveal">
+                      <span class="card-title">Transfer Price</span> <button type="button" class="close"
+                        data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                      <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                    </div> -->
+                    <!-- card reveal -->
+                    <br>
+                    <br>
+                    <br>
+                  </div>
+                </div>
+
+              </div>
+
+
             </div>
+
+
           </div>
         </div>
-        <!-- content-wrapper ends -->
-        <!-- partial:../../partials/_footer.html -->
+
+
         <footer class="footer">
           <div class="d-sm-flex justify-content-center justify-content-sm-between">
-            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2021.  Premium <a href="https://www.bootstrapdash.com/" target="_blank">Bootstrap admin template</a> from BootstrapDash. All rights reserved.</span>
-            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="ti-heart text-danger ml-1"></i></span>
+            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2021. Premium <a
+                href="https://www.bootstrapdash.com/" target="_blank">Bootstrap admin template</a> from BootstrapDash.
+              All rights reserved.</span>
+            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i
+                class="ti-heart text-danger ml-1"></i></span>
           </div>
         </footer>
-        <!-- partial -->
       </div>
-      <!-- main-panel ends -->
     </div>
-    <!-- page-body-wrapper ends -->
   </div>
-  <!-- container-scroller -->
-  <!-- plugins:js -->
+
   <script src="../../vendors/js/vendor.bundle.base.js"></script>
-  <!-- endinject -->
-  <!-- Plugin js for this page -->
-  <!-- End plugin js for this page -->
-  <!-- inject:js -->
+
   <script src="../../js/off-canvas.js"></script>
   <script src="../../js/hoverable-collapse.js"></script>
   <script src="../../js/template.js"></script>
   <script src="../../js/settings.js"></script>
   <script src="../../js/todolist.js"></script>
-  <!-- endinject -->
-  <!-- Custom js for this page-->
-  <!-- End custom js for this page-->
+
 </body>
 
 </html>
